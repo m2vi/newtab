@@ -1,0 +1,35 @@
+.theme-light {
+  --background-light: #fff;
+  --background-light-alt: #fff;
+  --background: #edf2f7;
+  --background-alt: #f7fafc;
+  --background-dark: #e2e8f0;
+  --text-normal: #2d3748;
+  --text-muted: #718096;
+  --text-focus: #1a202c;
+}
+
+:root {
+  color: var(--color-primary-100);
+  font-size: 14px;
+
+  --color-accent: hsl(220, 80%, 55%);
+  --color-accent-hover: hsl(220, 100%, 65%);
+  --color-accent-disabled: hsl(220, 100%, 80%);
+  --color-accent-glow: #42b4ff;
+  --color-button-text: #fff;
+  --shadow-accent: 0px 10px 30px hsla(200, 100%, 50%, 0.2);
+
+  --color-accent-2: #fd4d4d;
+  --color-accent-2-hover: #fd6868;
+  --color-accent-2-disabled: #f5bfbf;
+  --color-accent-2-glow: rgba(253, 77, 77, 0.063);
+
+  --color-primary-100: hsl(215, 22%, 89%);
+  --color-primary-200: hsl(216, 21%, 75%);
+  --color-primary-300: hsl(215, 22%, 46%);
+  --color-primary-600: hsl(216, 21%, 25%);
+  --color-primary-700: hsl(215, 21%, 18%);
+  --color-primary-800: hsl(215, 22%, 11%);
+  --color-primary-900: hsl(210, 21%, 6%);
+}

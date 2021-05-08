@@ -1,9 +1,49 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@import url('https://cdnjs.cloudflare.com/ajax/libs/inter-ui/3.18.0/inter.css');
+
+h1,
+h2,
+h3,
+h4,
+p {
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+p.bold {
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 3.85rem;
+}
+
+h2 {
+  font-size: 2.8rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.4rem;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+p.small {
+  font-size: 0.85rem;
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: var(--text-focus);
 }
 
 a {
@@ -13,4 +53,177 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--color-primary-900);
+}
+
+.activeUp:active {
+  transform: translateY(-2px);
+}
+
+img {
+  -webkit-user-drag: none;
+}
+
+*:focus {
+  outline: 0 !important;
+}
+
+.Modal__Content {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+}
+
+.Modal__Overlay {
+  background-color: hsla(0, 0%, 0%, 0.3);
+}
+
+/* STOLEN FROM CODEPEN: */
+
+[tooltip] {
+  position: relative;
+}
+
+[tooltip]::before,
+[tooltip]::after {
+  text-transform: none;
+  font-size: 0.9em;
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+  position: absolute;
+  display: none;
+  opacity: 0;
+}
+[tooltip]::before {
+  content: '';
+  border: 5px solid transparent;
+  z-index: 51;
+}
+[tooltip]::after {
+  content: attr(tooltip);
+  text-align: center;
+  min-width: 3em;
+  max-width: 21em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 10px 10px;
+  border-radius: 5px;
+  box-shadow: 0 1em 2em -0.5em rgba(0, 0, 0, 0.35);
+  background: var(--color-primary-700);
+  color: var(--text-normal);
+  z-index: 50;
+}
+
+[tooltip]:hover::before,
+[tooltip]:hover::after {
+  display: block;
+}
+
+[tooltip='']::before,
+[tooltip='']::after {
+  display: none !important;
+}
+
+/* FLOW: UP */
+[tooltip]:not([flow])::before,
+[tooltip][flow^='up']::before {
+  bottom: 100%;
+  border-bottom-width: 0;
+  border-top-color: var(--color-primary-700);
+}
+[tooltip]:not([flow])::after,
+[tooltip][flow^='up']::after {
+  bottom: calc(100% + 5px);
+}
+[tooltip]:not([flow])::before,
+[tooltip]:not([flow])::after,
+[tooltip][flow^='up']::before,
+[tooltip][flow^='up']::after {
+  left: 50%;
+  transform: translate(-50%, -0.5em);
+}
+
+/* FLOW: DOWN */
+[tooltip][flow^='down']::before {
+  top: 100%;
+  border-top-width: 0;
+  border-bottom-color: var(--color-primary-700);
+}
+[tooltip][flow^='down']::after {
+  top: calc(100% + 5px);
+}
+[tooltip][flow^='down']::before,
+[tooltip][flow^='down']::after {
+  left: 50%;
+  transform: translate(-50%, 0.5em);
+}
+
+/* FLOW: LEFT */
+[tooltip][flow^='left']::before {
+  bottom: 100%;
+  left: 50% !important;
+  border-bottom-width: 0;
+  border-top-color: var(--color-primary-700);
+  transform: translate(0.5em, -50%);
+}
+[tooltip][flow^='left']::after {
+  bottom: calc(100% + 5px);
+}
+[tooltip][flow^='left']::before,
+[tooltip][flow^='left']::after {
+  left: -50%;
+  transform: translate(-50%, -0.5em);
+}
+
+/* FLOW: RIGHT */
+[tooltip][flow^='right']::before {
+  bottom: 100%;
+  left: 50% !important;
+  border-bottom-width: 0;
+  border-top-color: var(--color-primary-700);
+  transform: translate(0.5em, -50%);
+}
+[tooltip][flow^='right']::after {
+  bottom: calc(100% + 5px);
+}
+[tooltip][flow^='right']::before,
+[tooltip][flow^='right']::after {
+  left: 30%;
+  transform: translate(-50%, -0.5em);
+}
+
+/* KEYFRAMES */
+@keyframes tooltips-vert {
+  to {
+    opacity: 0.9;
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes tooltips-horz {
+  to {
+    opacity: 0.9;
+    transform: translate(0, -50%);
+  }
+}
+
+/* FX All The Things */
+[tooltip][flow^='left']:hover::before,
+[tooltip][flow^='left']:hover::after,
+[tooltip]:not([flow]):hover::before,
+[tooltip]:not([flow]):hover::after,
+[tooltip][flow^='up']:hover::before,
+[tooltip][flow^='up']:hover::after,
+[tooltip][flow^='down']:hover::before,
+[tooltip][flow^='down']:hover::after,
+[tooltip][flow^='right']:hover::before,
+[tooltip][flow^='right']:hover::after {
+  animation: tooltips-vert 300ms ease-out forwards;
 }
