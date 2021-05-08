@@ -71,6 +71,7 @@ export const DuckDuckGo = {
           className={`max-w-2xl mx-3 ${className}`}
           autoComplete='off'
           autoCapitalize='off'
+          autoCorrect='off'
           autoFocus
           ref={ref}
           {...props}
@@ -96,22 +97,22 @@ export const Google = {
   form: forwardRef(({ className, ...props }: any, ref) => {
     return (
       <form
-        method='get'
-        action='https://duckduckgo.com/'
+        action='https://www.google.com/search'
+        method='GET'
         className='flex justify-center items-center w-full'
       >
-        <input type='hidden' name='kp' value='1' />
-        <input type='hidden' name='kaf' value='1' />
-        <input type='hidden' name='kg' value='g' />
-        <input type='hidden' name='k5' value='1' />
+        <input name='source' type='hidden' value='hp' />
         <Input
+          className={`max-w-2xl mx-3 ${className}`}
           type='text'
           name='q'
           placeholder='Explore the web with the best experience'
-          className={`max-w-2xl mx-3 ${className}`}
-          autoComplete='off'
-          autoCapitalize='off'
-          autoFocus
+          autocapitalize='off'
+          autocomplete='off'
+          autoCorrect='off'
+          autofocus
+          role='combobox'
+          spellcheck='false'
           {...props}
         />
       </form>
@@ -145,6 +146,7 @@ export const Bing = {
           className={`max-w-2xl mx-3 ${className}`}
           autoComplete='off'
           autoCapitalize='off'
+          autoCorrect='off'
           autoFocus
           ref={ref}
           {...props}

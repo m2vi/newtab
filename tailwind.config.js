@@ -98,6 +98,7 @@ module.exports = {
       0: '0px',
     },
     boxShadow: {
+      none: 'none',
       accent: '0 0 0 3px var(--color-accent-glow)',
       1: '0px 4px 14px rgba(0, 0, 0, 0.4)',
     },

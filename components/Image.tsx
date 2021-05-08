@@ -1,4 +1,4 @@
-import { forwardRef, useEffect } from 'react';
+import { useEffect } from 'react';
 
 export const Image = ({ className, ...props }: ImageProps) => {
   const getIndex = (max: number) => {
@@ -43,9 +43,15 @@ export default Image;
 
 export const imageConfig: ImageItemProps = [
   {
-    hasImage: true,
-    src: '/bg/abstract-shapes.png',
-    alt: 'Abstract Shapes',
+    hasImage: false,
+    src: '/bg/sand.png',
+    alt: 'Some Sand Image',
+    bodyCSS: {
+      backgroundColor: '#CFC3B3',
+      backgroundImage: 'url(/bg/sand.png)',
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover',
+    },
     className: 'bottom-0 right-0 top-0 left-0 h-full w-full',
   },
 ];

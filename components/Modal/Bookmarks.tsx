@@ -1,13 +1,10 @@
-import { useRouter } from 'next/router';
 import { IoBookOutline } from 'react-icons/io5';
-import { ModalLayout } from './Layout';
 
 const Bookmarks = () => {
   return <Button tooltip='Manage Bookmarks' flow='left' />;
 };
 
 export const Button = ({ ...props }) => {
-  const { push } = useRouter();
   return (
     <button
       name='Bookmarks'

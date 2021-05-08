@@ -70,6 +70,8 @@ img {
 
 *:focus {
   outline: 0 !important;
+  /* TODO: CHANGE IN THE FUTURE */
+  box-shadow: none !important;
 }
 
 .Modal__Content {
