@@ -4,7 +4,7 @@ import { ModalLayout } from './Layout';
 const Settings = () => {
   return (
     <ModalLayout
-      triggerChildren={<Button tooltip='View And Edit Settings' flow='right' />}
+      triggerChildren={<Button tooltip='View And Edit Settings' />}
       contentLabel='Settings'
       title='Settings'
     >

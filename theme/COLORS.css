@@ -1,14 +1,3 @@
-.theme-light {
-  --background-light: #fff;
-  --background-light-alt: #fff;
-  --background: #edf2f7;
-  --background-alt: #f7fafc;
-  --background-dark: #e2e8f0;
-  --text-normal: #2d3748;
-  --text-muted: #718096;
-  --text-focus: #1a202c;
-}
-
 :root {
   color: var(--color-primary-100);
   font-size: 14px;
@@ -32,4 +21,24 @@
   --color-primary-700: hsl(215, 21%, 18%);
   --color-primary-800: hsl(215, 22%, 11%);
   --color-primary-900: hsl(210, 21%, 6%);
+}
+
+.theme-light {
+  --background-light: #fff;
+  --background-light-alt: #fff;
+  --background: #edf2f7;
+  --background-alt: #f7fafc;
+  --background-dark: #e2e8f0;
+
+  --text-normal: #2d3748;
+  --text-muted: #718096;
+  --text-focus: #1a202c;
+
+  --color-primary-100: hsl(210, 21%, 6%);
+  --color-primary-200: hsl(215, 22%, 11%);
+  --color-primary-300: hsl(215, 21%, 18%);
+  --color-primary-600: #e2e8f0;
+  --color-primary-700: #edf2f7;
+  --color-primary-800: #f7fafc;
+  --color-primary-900: #fff;
 }

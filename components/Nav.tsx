@@ -1,6 +1,7 @@
 import Preferences from './Modal/Preferences';
 import Bookmarks from './Modal/Bookmarks';
 import Settings from './Modal/Settings';
+import Docs from './Modal/Docs';
 
 const Nav = ({ className, ...props }) => {
   return (
@@ -9,6 +10,7 @@ const Nav = ({ className, ...props }) => {
         <Preferences />
         <Settings />
         <Bookmarks />
+        <Docs />
       </div>
     </div>
   );

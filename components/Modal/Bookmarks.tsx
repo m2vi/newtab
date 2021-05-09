@@ -1,7 +1,7 @@
 import { IoBookOutline } from 'react-icons/io5';
 
 const Bookmarks = () => {
-  return <Button tooltip='Manage Bookmarks' flow='left' />;
+  return <Button tooltip='Manage Bookmarks' flow='right' />;
 };
 
 export const Button = ({ ...props }) => {

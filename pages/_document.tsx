@@ -1,9 +1,9 @@
 import Document, {
   Html,
   Head,
+  DocumentContext,
   Main,
   NextScript,
-  DocumentContext,
 } from 'next/document';
 import Favicon from '../components/Favicon';
 
@@ -18,11 +18,8 @@ class MyDocument extends Document {
       <Html lang='de-AT'>
         <Head>
           <Favicon />
-          <link rel='preload' href='/icons/DuckDuckGo.svg' as='image' />
-          <link rel='preload' href='/icons/Google.svg' as='image' />
-          <link rel='preload' href='/icons/MsBing.svg' as='image' />
         </Head>
-        <body className='theme-dark'>
+        <body>
           <Main />
           <NextScript />
         </body>

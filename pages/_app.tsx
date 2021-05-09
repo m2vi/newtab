@@ -2,6 +2,8 @@ import NProgress from 'nprogress';
 import { AppProps } from 'next/app';
 import Router from 'next/router';
 
+import { ThemeProvider } from '../context/theme';
+
 import 'nprogress/nprogress.css';
 import 'tailwindcss/tailwind.css';
 import '../styles/globals.css';
@@ -12,5 +14,9 @@ Router.events.on('routeChangeComplete', () => NProgress.done());
 Router.events.on('routeChangeError', () => NProgress.done());
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <ThemeProvider>
+      <Component {...pageProps} />
+    </ThemeProvider>
+  );
 }
