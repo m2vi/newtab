@@ -46,11 +46,11 @@ module.exports = {
     colors: {
       normal: 'var(--text-normal-100)',
       muted: 'var(--color-primary-300)',
-      focus: 'var(--text-focus-200)',
+      focus: 'var(--icon-focus)',
       button: 'var(--color-button-text)',
       transparent: 'transparent',
       default: 'red',
-      white: 'white',
+      white: 'var(--icon-white)',
       primary: {
         100: 'var(--color-primary-100)',
         200: 'var(--color-primary-200)',

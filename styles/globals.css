@@ -119,7 +119,7 @@ img {
   border-radius: 5px;
   box-shadow: 0 1em 2em -0.5em rgba(0, 0, 0, 0.35);
   background: var(--color-primary-700);
-  color: var(--text-normal);
+  color: var(--color-primary-100);
   z-index: 50;
 }
 
@@ -216,7 +216,6 @@ img {
   }
 }
 
-/* FX All The Things */
 [tooltip][flow^='left']:hover::before,
 [tooltip][flow^='left']:hover::after,
 [tooltip]:not([flow]):hover::before,
@@ -228,4 +227,10 @@ img {
 [tooltip][flow^='right']:hover::before,
 [tooltip][flow^='right']:hover::after {
   animation: tooltips-vert 300ms ease-out forwards;
+}
+
+@media only screen and (hover: none) and (pointer: coarse) {
+  [tooltip] {
+    animation: none !important;
+  }
 }
