@@ -1,11 +1,17 @@
 import { isDevelopment } from './constants';
 
-class lowkey {
-  log(query: string) {
+class log {
+  do(query: string) {
     if (isDevelopment) {
-      console.log(`%c${query}`, 'color: white');
+      console.log(query);
+    }
+  }
+
+  error(query: string) {
+    if (isDevelopment) {
+      console.log(query);
     }
   }
 }
 
-export default new lowkey();
+export default new log();

@@ -11,7 +11,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ className, textarea, error, transparent, ...props }, ref) => {
     const bg = transparent ? `bg-transparent` : `bg-primary-800`;
     const ring = error ? `ring-1 ring-secondary` : 'border-0';
-    const cn = `w-full py-2 px-4 rounded-8 placeholder-priamry-300 text-primary-100 focus:shadow-none focus:shadow-accent select-none ${bg} ${ring} ${className} `;
+    const cn = `w-full py-2 px-4 rounded-8 placeholder-primary-400 text-primary-200 select-none ${bg} ${ring} ${className} `;
 
     return textarea ? (
       <textarea

@@ -5,8 +5,8 @@ import Docs from './Modal/Docs';
 
 const Nav = ({ className, ...props }) => {
   return (
-    <div className={`${className}`} {...props}>
-      <div className='w-full h-full flex p-2'>
+    <div className={`${className} w-full`} {...props}>
+      <div className='w-full h-full flex justify-center sm:justify-end p-2'>
         <Preferences />
         <Settings />
         <Bookmarks />

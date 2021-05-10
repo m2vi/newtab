@@ -1,8 +1,6 @@
 import { iconProps } from './iconProps';
 
-const Google = ({ type, className, ...props }: iconProps) => {
-  const bg = type === 'dark' ? '#0c0f13' : '#f7fafc';
-
+const Google = ({ className, ...props }: iconProps) => {
   return (
     <svg
       width={173}
@@ -15,7 +13,7 @@ const Google = ({ type, className, ...props }: iconProps) => {
     >
       <path
         d='M78.8 4.21L8.354 42.714A16.056 16.056 0 000 56.804v88.392a16.056 16.056 0 008.355 14.089l70.444 38.506a16.056 16.056 0 0015.402 0l70.444-38.506A16.057 16.057 0 00173 145.196V56.804c0-5.87-3.204-11.273-8.355-14.089L94.201 4.21a16.056 16.056 0 00-15.402 0z'
-        fill={bg}
+        fill='var(--color-primary-800)'
       />
       <g filter='url(#prefix__filter0_d)'>
         <path

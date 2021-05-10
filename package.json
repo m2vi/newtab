@@ -22,8 +22,8 @@
     "react-iconly": "^2.2.2",
     "react-icons": "^4.2.0",
     "react-modal": "^3.13.1",
-    "tailwind-scrollbar": "^1.3.0",
-    "words-to-time-converter": "^1.1.0"
+    "reading-time": "^1.3.0",
+    "tailwind-scrollbar": "^1.3.0"
   },
   "devDependencies": {
     "@types/node": "^15.0.2",

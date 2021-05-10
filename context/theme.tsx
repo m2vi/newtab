@@ -1,5 +1,6 @@
 import { createContext, useReducer } from 'react';
-import lowkey from '../utils/log';
+import log from '../utils/log';
+import capitalize from '../utils/text/capitalize';
 
 export const ThemeContext = createContext(null);
 
@@ -7,14 +8,14 @@ export const detectTheme = () => {
   if (localStorage.getItem('theme')) {
     const theme = localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';
 
-    lowkey.log(`${theme} theme was loaded from localStorage`);
+    log.do(`${capitalize(theme)} theme was loaded from localStorage`);
     return theme;
   } else {
     const theme = window.matchMedia('(prefers-color-scheme: dark)').matches
       ? 'dark'
       : 'light';
 
-    lowkey.log(`${theme} theme was loaded from localStorage`);
+    log.do(`${capitalize(theme)} theme was loaded from localStorage`);
     return theme;
   }
 };

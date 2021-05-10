@@ -20,6 +20,10 @@
     "128": "icons/icon128.png"
   },
 
+  "background": {
+    "service_worker": "contentScript.js"
+  },
+
   "author": "m2v",
   "permissions": ["bookmarks"],
   "content_scripts": [
@@ -27,8 +31,5 @@
       "matches": ["http://localhost:3000/*"],
       "js": ["contentScript.js"]
     }
-  ],
-  "chrome_url_overrides": {
-    "newtab": "./pages/redirect.html"
-  }
+  ]
 }

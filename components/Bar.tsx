@@ -1,13 +1,4 @@
-import {
-  useEffect,
-  useState,
-  FC,
-  useRef,
-  forwardRef,
-  RefObject,
-  useContext,
-} from 'react';
-import { ThemeContext } from '../context/theme';
+import { useEffect, useState, FC, useRef, forwardRef, RefObject } from 'react';
 import { Input } from '../interface/Input';
 
 import DuckDuckGoImage from './icons/DuckDuckGo';
@@ -37,7 +28,6 @@ export const BarConfig = ['DuckDuckGo', 'Google', 'Bing'];
 export const Bar = ({ Engine }: BarProps) => {
   const [engine, setEngine] = useState(getEngine(Engine) as any);
   const ref = useRef();
-  const { state } = useContext(ThemeContext);
 
   const handleClick = () => {
     const newEngine =
@@ -61,7 +51,6 @@ export const Bar = ({ Engine }: BarProps) => {
     <div className='w-full h-auto pb-6 pt-9 flex justify-center items-center flex-col '>
       <engine.img
         onClick={handleClick}
-        type={state.darkMode ? 'dark' : 'light'}
         className='activeUp cursor-pointer select-none mb-7 mt-9'
       />
       <engine.form
@@ -72,7 +61,7 @@ export const Bar = ({ Engine }: BarProps) => {
         autoCorrect='off'
         spellCheck='false'
         autoFocus
-        className='max-w-2xl mx-3 '
+        className='max-w-2xl mx-3'
       />
     </div>
   );
