@@ -1,6 +1,8 @@
 module.exports = {
   darkMode: 'class',
-  purge: ['./**/*.tsx', './public/index.html'],
+  purge: {
+    content: ['./**/*.{js,ts,jsx,tsx}', './**/**/*.{js,ts,jsx,tsx}'],
+  },
   theme: {
     zIndex: {
       n1: '-1',
