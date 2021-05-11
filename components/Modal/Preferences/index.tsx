@@ -1,16 +1,8 @@
-import { ChangeEvent, useContext, useEffect } from 'react';
 import { IoOptionsOutline } from 'react-icons/io5';
-import { applyTheme, ThemeContext } from '../../../context/theme';
 import { ModalLayout } from '../Layout';
 import UseDarkMode from './options/UseDarkMode';
 
 const Preferences = () => {
-  const { state } = useContext(ThemeContext);
-
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    applyTheme({ darkMode: e.target.checked });
-  };
-
   return (
     <ModalLayout
       triggerChildren={<Button tooltip='Customize New Tab' />}
