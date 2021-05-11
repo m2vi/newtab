@@ -2,9 +2,11 @@ import Head from 'next/head';
 import { Bar } from '../components/Bar';
 import Image from '../components/Image';
 import Nav from '../components/Nav';
+import { ToastContainer } from 'react-toastify';
 
 import { useContext, useEffect } from 'react';
 import { detectTheme, ThemeContext } from '../context/theme';
+import notification from '../utils/notification';
 
 export default function Home() {
   const theme = useContext(ThemeContext);
@@ -12,6 +14,7 @@ export default function Home() {
   useEffect(() => {
     theme.dispatch({
       type: detectTheme(),
+      silent: true,
     });
   }, []);
 
@@ -24,6 +27,8 @@ export default function Home() {
       <Bar Engine='DuckDuckGo' />
       <Nav className='absolute bottom-0 right-0' />
       <Image />
+
+      <ToastContainer />
     </>
   );
 }

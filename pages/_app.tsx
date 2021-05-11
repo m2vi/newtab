@@ -6,8 +6,10 @@ import { ThemeProvider } from '../context/theme';
 
 import 'nprogress/nprogress.css';
 import 'tailwindcss/tailwind.css';
-import '../styles/globals.css';
+
+import '../styles/notifications.css';
 import '../theme/COLORS.css';
+import '../styles/globals.css';
 
 Router.events.on('routeChangeStart', () => NProgress.start());
 Router.events.on('routeChangeComplete', () => NProgress.done());

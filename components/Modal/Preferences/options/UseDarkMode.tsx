@@ -1,12 +1,18 @@
 import { ChangeEvent, useContext } from 'react';
 import { applyTheme, ThemeContext } from '../../../../context/theme';
+import notification from '../../../../utils/notification';
 import { optionProps } from './optionProps';
 
 const useDarkMode = ({ className, ...props }: optionProps) => {
   const { state } = useContext(ThemeContext);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    applyTheme({ darkMode: e.target.checked });
+    applyTheme({
+      darkMode: e.target.checked,
+      options: {
+        silent: false,
+      },
+    });
   };
 
   return (

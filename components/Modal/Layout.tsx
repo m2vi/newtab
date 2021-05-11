@@ -40,7 +40,7 @@ export const ModalLayout = ({
         }
         id={id}
         className={
-          'Modal__Content max-w-3xl bg-primary-800 p-4 rounded-8 text-primary-100 w-full pt-7'
+          'Modal__Content max-w-3xl bg-primary-700 p-4 rounded-8 text-primary-100 w-full pt-7'
         }
         bodyOpenClassName={'Modal__Body__Open'}
         ariaHideApp={false}

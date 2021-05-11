@@ -1,5 +1,6 @@
 import { createContext, useReducer } from 'react';
 import log from '../utils/log';
+import notify from '../utils/notification';
 import capitalize from '../utils/text/capitalize';
 
 export const ThemeContext = createContext(null);
@@ -24,16 +25,16 @@ export const initialState = {
   darkMode: false,
 };
 
-const themeReducer = (state, action) => {
-  switch (action.type) {
+const themeReducer = (state, { type, silent }) => {
+  switch (type) {
     case 'light':
-      applyTheme({ darkMode: false });
+      applyTheme({ darkMode: false, options: { silent } });
       return { darkMode: false };
     case 'dark':
-      applyTheme({ darkMode: true });
+      applyTheme({ darkMode: true, options: { silent } });
       return { darkMode: true };
     default:
-      applyTheme({ darkMode: true });
+      applyTheme({ darkMode: true, options: { silent } });
       return state;
   }
 };
@@ -48,13 +49,30 @@ export const ThemeProvider = ({ children }) => {
   );
 };
 
-export const applyTheme = (state) => {
+export const applyTheme = ({ darkMode, options }) => {
+  const { silent } = options;
+
+  const themeName = darkMode ? 'dark' : 'light';
+
   const body = document.querySelector('body').classList;
 
   body.remove('theme-dark');
   body.remove('theme-light');
 
-  body.add(`theme-${state.darkMode ? 'dark' : 'light'}`);
+  body.add(`theme-${darkMode ? 'dark' : 'light'}`);
 
-  localStorage.setItem('theme', state.darkMode ? 'dark' : 'light');
+  localStorage.setItem('theme', themeName);
+
+  if (!silent) {
+    notify('info', `Applied ${themeName} theme`, !silent);
+  }
 };
+
+export interface applyOptions {
+  silent?: boolean;
+  callback?: Function;
+}
+
+export interface appyThemeProps {
+  darkMode: boolean;
+}
