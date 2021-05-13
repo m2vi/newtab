@@ -1,4 +1,5 @@
 import { toast, ToastOptions } from 'react-toastify';
+import { isDevelopment } from './constants';
 
 export const notify = (
   type: string,
@@ -6,6 +7,9 @@ export const notify = (
   important?: boolean,
   options?: ToastOptions
 ) => {
+  if (isDevelopment) {
+    return console.log(text);
+  }
   toast.info(
     text,
     options

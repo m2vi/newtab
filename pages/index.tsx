@@ -4,20 +4,7 @@ import Image from '../components/Image';
 import Nav from '../components/Nav';
 import { ToastContainer } from 'react-toastify';
 
-import { useContext, useEffect } from 'react';
-import { detectTheme, ThemeContext } from '../context/theme';
-import notification from '../utils/notification';
-
 export default function Home() {
-  const theme = useContext(ThemeContext);
-
-  useEffect(() => {
-    theme.dispatch({
-      type: detectTheme(),
-      silent: true,
-    });
-  }, []);
-
   return (
     <>
       <Head>

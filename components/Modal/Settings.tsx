@@ -17,7 +17,7 @@ export const Button = ({ ...props }) => {
   return (
     <button
       name='Settings'
-      className='flex justify-center items-center text-primary-900 hover:text-primary-800'
+      className='flex justify-center items-center text-primary-100 hover:text-primary-200'
       {...props}
     >
       <IoSettingsOutline className='h-5 w-5 pointer-events-none m-2' />

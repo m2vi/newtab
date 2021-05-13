@@ -1,5 +1,5 @@
 import { useEffect, useState, FC, useRef, forwardRef, RefObject } from 'react';
-import { Input } from '../interface/Input';
+import { Input } from './Input';
 
 import DuckDuckGoImage from './icons/DuckDuckGo';
 import GoogleImage from './icons/Google';

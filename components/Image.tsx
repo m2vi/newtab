@@ -8,9 +8,8 @@ export const Image = ({ className, ...props }: ImageProps) => {
   return (
     <>
       {getIndex(imageConfig.length).map((index) => {
-        const { src, alt, className, css, bodyCSS, hasImage } = imageConfig[
-          index
-        ];
+        const { src, alt, className, css, bodyCSS, hasImage } =
+          imageConfig[index];
 
         const setBodyStyle = (style: object) => {
           for (let i in style) {
@@ -44,13 +43,8 @@ export default Image;
 export const imageConfig: ImageItemProps = [
   {
     hasImage: false,
-    src: '/bg/sand.png',
-    alt: 'Some Sand Image',
     bodyCSS: {
-      backgroundColor: '#CFC3B3',
-      backgroundImage: 'url(/bg/sand.png)',
-      backgroundRepeat: 'no-repeat',
-      backgroundSize: 'cover',
+      backgroundColor: '',
     },
     className: 'bottom-0 right-0 top-0 left-0 h-full w-full',
   },

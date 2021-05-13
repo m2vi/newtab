@@ -1,4 +1,28 @@
-:root {
+.theme-dark {
+  --color-primary-100: #f2f5fb;
+  --color-primary-200: #dae1f0;
+  --color-primary-300: #98a3b9;
+  --color-primary-400: #768198;
+  --color-primary-500: #535d73;
+  --color-primary-600: #333b4d;
+  --color-primary-700: #232936;
+  --color-primary-800: #101624;
+  --color-primary-900: #0c111b;
+}
+
+.theme-light {
+  /* fonts */
+  --color-primary-100: #141820;
+  --color-primary-200: #212a35;
+  --color-primary-300: #718096;
+
+  /* backgrounds */
+  --color-primary-700: #ffffff;
+  --color-primary-800: #efeff4;
+  --color-primary-900: #ffffff;
+}
+
+body {
   color: var(--color-primary-100);
   font-size: 14px;
 
@@ -16,26 +40,6 @@
   --color-accent-2-hover: #fd6868;
   --color-accent-2-disabled: #f5bfbf;
   --color-accent-2-glow: rgba(253, 77, 77, 0.063);
-}
 
-.theme-dark {
-  --color-primary-100: #ffffff;
-  --color-primary-200: #b2bdcd;
-  --color-primary-300: #5d7290;
-  --color-primary-400: #4f617a;
-  --color-primary-500: #404f64;
-  --color-primary-600: #323d4d;
-  --color-primary-700: #242c37;
-  --color-primary-800: #151a21;
-  --color-primary-900: #0b0e11;
-}
-
-.theme-light {
-  --color-primary-100: #141820;
-  --color-primary-200: #161b22;
-  --color-primary-300: #718096;
-  --color-primary-600: #e2e8f0;
-  --color-primary-700: #edf2f7;
-  --color-primary-800: #f7fafc;
-  --color-primary-900: #ffffff;
+  --shadow-normal: 0px 6px 6px rgba(0, 0, 0, 0.25);
 }

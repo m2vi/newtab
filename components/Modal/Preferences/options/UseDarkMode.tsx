@@ -21,8 +21,10 @@ const useDarkMode = ({ className, ...props }: optionProps) => {
       {...props}
     >
       <span>Use dark mode</span>
-      <input type='checkbox' id='darkModeSwitch' onChange={handleChange} />
-      <label htmlFor='darkModeSwitch' />
+      <div className='flex items-center justify-center'>
+        <input type='checkbox' id='darkModeSwitch' onChange={handleChange} />
+        <label htmlFor='darkModeSwitch' />
+      </div>
     </div>
   );
 };
