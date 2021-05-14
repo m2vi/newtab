@@ -7,9 +7,9 @@ export const notify = (
   important?: boolean,
   options?: ToastOptions
 ) => {
-  if (isDevelopment) {
-    return console.log(text);
-  }
+  // if (isDevelopment) {
+  //   return console.log(text);
+  // }
   toast.info(
     text,
     options

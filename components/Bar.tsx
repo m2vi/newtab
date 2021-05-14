@@ -120,6 +120,31 @@ export const Google = {
   },
 };
 
+export const GoogleScholar = {
+  name: 'Google Scholar',
+  form: forwardRef(({ className, ...props }: any, ref) => {
+    return (
+      <form
+        action='https://scholar.google.at/scholar'
+        method='GET'
+        className='flex justify-center items-center w-full'
+      >
+        <input name='source' type='hidden' value='hp' />
+        <Input
+          name='q'
+          placeholder='Explore the web with the best experience'
+          className={`${className}`}
+          role='combobox'
+          {...props}
+        />
+      </form>
+    );
+  }),
+  img: ({ className, ...props }) => {
+    return <GoogleImage className={`${className}`} {...props} />;
+  },
+};
+
 export const Bing = {
   name: 'Bing',
   form: forwardRef(({ className, ...props }: any, ref) => {

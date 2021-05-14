@@ -1,26 +1,53 @@
-export interface toggleProps {
-  id?: string;
+export interface toggleProps extends React.HTMLAttributes<HTMLInputElement> {
+  is: 'brave' | 'discord';
   disabled?: boolean;
   checked?: boolean;
   size?: 'large' | 'small';
 }
 
-export const Toggle = ({ id, disabled, checked, size }: toggleProps) => {
+export const Toggle = (props: toggleProps) => {
+  const { is } = props;
+
+  switch (is) {
+    case 'brave':
+      return <BraveToggle {...props} />;
+
+    case 'discord':
+      return <DiscordToggle {...props} />;
+
+    default:
+      return null;
+  }
+};
+
+export const BraveToggle = ({
+  disabled,
+  checked,
+  onChange,
+  size,
+  ...props
+}: toggleProps) => {
   return (
-    <div className='flex relative h-full justify-center items-center' id={id}>
+    <label className='brave__switch'>
       <input
         type='checkbox'
-        className='appearance-none absolute z-100 w-full h-full top-0 left-0'
+        checked={checked}
+        onChange={onChange}
+        disabled={disabled}
+        {...props}
       />
-
-      <div
-        className={`relative block cursor-pointer ${
-          size === 'large' ? 'h-2' : 'h-1'
-        }`}
-      >
-        <label className='h-1 mt-1 w-full rounded-5'></label>
-        <label className='w-4 h-4 absolute right-0'></label>
+      <div>
+        <span></span>
       </div>
-    </div>
+    </label>
   );
+};
+
+export const DiscordToggle = ({
+  disabled,
+  checked,
+  size,
+  ...props
+}: toggleProps) => {
+  return null;
 };

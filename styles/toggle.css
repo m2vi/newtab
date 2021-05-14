@@ -1,0 +1,55 @@
+.brave__switch {
+  --line: #c4c7c9;
+  --dot: #f7f8ff;
+  --circle: #9ea0be;
+  --duration: 0.25s;
+  cursor: pointer;
+}
+
+.brave__switch input {
+  display: none;
+}
+
+.brave__switch input + div {
+  position: relative;
+}
+.brave__switch input + div:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  height: 8px;
+  top: 6.3999px;
+  left: 0;
+  width: 40px;
+  background: var(--line);
+  transition: transform var(--duration) ease;
+  border-radius: 2px;
+}
+.brave__switch input + div span {
+  padding-left: 40px;
+  line-height: 20px;
+}
+.brave__switch input + div span:before {
+  --x: -1px;
+  --b: var(--circle);
+  --s: #ebecf0;
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--s);
+  transform: translateX(var(--x));
+  transition: box-shadow var(--duration) ease, transform var(--duration) ease,
+    background calc(var(--duration) / 2) ease;
+}
+.brave__switch input + div span:not(:empty) {
+  padding-left: 64px;
+}
+.brave__switch input:checked + div span:before {
+  --s: var(--color-accent);
+  --x: 21px;
+  --b: var(--dot);
+}

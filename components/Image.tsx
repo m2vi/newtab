@@ -1,40 +1,34 @@
 import { useEffect } from 'react';
 
-export const Image = ({ className, ...props }: ImageProps) => {
+export const Image = ({ ...props }: ImageProps) => {
   const getIndex = (max: number) => {
-    return [Math.floor(Math.random() * max)];
+    return Math.floor(Math.random() * max);
   };
 
+  const { src, alt, className, css, bodyCSS, hasImage } =
+    imageConfig[getIndex(imageConfig.length)];
+
+  const setBodyStyle = (style: object) => {
+    for (let i in style) {
+      document.body.style[i] = style[i];
+    }
+  };
+
+  const cn = 'pointer-events-none absolute z-n1 select-none';
+
+  useEffect(() => {
+    setBodyStyle(bodyCSS);
+  }, []);
+
   return (
-    <>
-      {getIndex(imageConfig.length).map((index) => {
-        const { src, alt, className, css, bodyCSS, hasImage } =
-          imageConfig[index];
-
-        const setBodyStyle = (style: object) => {
-          for (let i in style) {
-            document.body.style[i] = style[i];
-          }
-        };
-
-        const cn = 'pointer-events-none absolute z-n1 select-none';
-
-        useEffect(() => {
-          setBodyStyle(bodyCSS);
-        }, []);
-
-        return (
-          <img
-            src={hasImage ? src : null}
-            alt={alt}
-            className={`${cn} ${!hasImage && 'hidden opacity-0'} ${className}`}
-            style={css}
-            key={alt}
-            {...props}
-          />
-        );
-      })}
-    </>
+    <img
+      src={hasImage ? src : null}
+      alt={alt}
+      className={`${cn} ${!hasImage && 'hidden opacity-0'} ${className}`}
+      style={css}
+      key={alt}
+      {...props}
+    />
   );
 };
 

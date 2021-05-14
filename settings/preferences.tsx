@@ -1,9 +1,11 @@
 import { ChangeEvent, useContext } from 'react';
-import { applyTheme, ThemeContext } from '../../../../context/theme';
-import notification from '../../../../utils/notification';
-import { optionProps } from './optionProps';
+import { applyTheme, ThemeContext } from '../context/theme';
 
-const useDarkMode = ({ className, ...props }: optionProps) => {
+export interface optionProps extends React.ComponentPropsWithoutRef<'div'> {
+  className?: string;
+}
+
+export const useDarkMode = ({ className, ...props }: optionProps) => {
   const { state } = useContext(ThemeContext);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -28,5 +30,3 @@ const useDarkMode = ({ className, ...props }: optionProps) => {
     </div>
   );
 };
-
-export default useDarkMode;

@@ -3,6 +3,7 @@ import { Bar } from '../components/Bar';
 import Image from '../components/Image';
 import Nav from '../components/Nav';
 import { ToastContainer } from 'react-toastify';
+import notify from '../utils/notification';
 
 export default function Home() {
   return (

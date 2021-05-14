@@ -237,41 +237,6 @@ img {
 
 /* Checkbox */
 
-input[type='checkbox'] {
-  height: 0;
-  width: 0;
-  visibility: hidden;
-}
-
-label {
-  cursor: pointer;
-  width: 40px;
-  height: 8px;
-  background: var(--color-primary-200);
-  display: block;
-  border-radius: 5px;
-  position: relative;
-}
-
-label:after {
-  content: '';
-  position: absolute;
-  top: -4px;
-  width: 18px;
-  height: 18px;
-  background: var(--color-accent);
-  border-radius: 90px;
-  transition: 0.3s;
-}
-
-input:checked + label {
-  background: var(--color-primary-100);
-}
-
-input:checked + label:after {
-  transform: translateX(40px);
-}
-
 /* label:active:after {
   width: 32px;
 } */

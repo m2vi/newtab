@@ -1,7 +1,7 @@
-import Preferences from './Modal/Preferences';
-import Bookmarks from './Modal/Bookmarks';
-import Settings from './Modal/Settings';
-import Docs from './Modal/Docs';
+import Preferences from './items/Preferences';
+import Bookmarks from './items/Bookmarks';
+import Settings from './items/Settings';
+import Docs from './items/Docs';
 
 const Nav = ({ className, ...props }) => {
   return (

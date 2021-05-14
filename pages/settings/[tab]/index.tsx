@@ -1,9 +1,26 @@
+import Head from 'next/head';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 import Divider from '../../../components/Divider';
-import HomePreview from '../../../components/HomePreview';
+import { Toggle } from '../../../components/Toggle';
+import capitalize from '../../../utils/text/capitalize';
 
 const index = () => {
+  const { query } = useRouter();
+  const [title, setTitle] = useState(null);
+
+  useEffect(() => {
+    console.log(query);
+    if (!query) return;
+
+    setTitle(capitalize(query.tab));
+  }, [query]);
+
   return (
     <div className='min-h-screen w-full h-full flex flex-row font-discord'>
+      <Head>
+        <title>{title}</title>
+      </Head>
       <aside
         className='h-full min-h-screen w-full flex justify-end bg-primary-800 select-none'
         style={{
@@ -34,7 +51,8 @@ const index = () => {
         }}
       >
         <nav className='h-full w-800'>
-          <div className='w-full h-14 bg-primary-800 rounded-8' />
+          <div className='w-full h-14 bg-primary-800 rounded-8 mb-4' />
+          <Toggle is='brave' />
         </nav>
       </aside>
     </div>
