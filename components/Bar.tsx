@@ -1,10 +1,10 @@
 import { useEffect, useState, FC, useRef, forwardRef, RefObject } from 'react';
 import { Input } from './Input';
 
-import DuckDuckGoImage from './engines/icons/DuckDuckGo';
-import GoogleImage from './engines/icons/Google';
-import GoogleScholarImage from './engines/icons/GoogleScholar';
-import MsBingImage from './engines/icons/MsBing';
+import DuckDuckGoImage from './engines/DuckDuckGo/icon';
+import GoogleImage from './engines/Google/icon';
+import GoogleScholarImage from './engines/GoogleScholar/icon';
+import MsBingImage from './engines/MsBing/icon';
 
 export interface BarProps {
   Engine: string;
@@ -16,7 +16,7 @@ export const getEngine = (engine: string) => {
       return DuckDuckGo;
     case 'Google':
       return Google;
-    case 'GoogleScholar':
+    case 'Google Scholar':
       return GoogleScholar;
     case 'Bing':
       return Bing;
@@ -26,23 +26,26 @@ export const getEngine = (engine: string) => {
   }
 };
 
-export const BarConfig = ['DuckDuckGo', 'Google', 'GoogleScholar', 'Bing'];
+export const BarConfig = ['DuckDuckGo', 'Google', 'Google Scholar', 'Bing'];
 
 export const Bar = ({ Engine }: BarProps) => {
   const [engine, setEngine] = useState(getEngine(Engine) as any);
   const ref = useRef();
 
   const handleClick = () => {
+    console.log(BarConfig.indexOf(engine.name) !== -1);
     const newEngine =
       BarConfig.indexOf(engine.name) !== -1
         ? BarConfig.indexOf(engine.name) + 1
         : 0;
 
+    console.log(getEngine(BarConfig[newEngine]));
     setEngine(getEngine(BarConfig[newEngine]));
   };
 
   const doFocus = (ref: RefObject<HTMLInputElement>) => {
     if (ref === null) return;
+    if (!ref.current) return;
     ref.current.focus();
   };
 
@@ -54,7 +57,7 @@ export const Bar = ({ Engine }: BarProps) => {
     <div className='w-full h-auto pb-6 pt-9 flex justify-center items-center flex-col '>
       <engine.img
         onClick={handleClick}
-        className='activeUp cursor-pointer select-none mb-7 mt-9'
+        className='activeUp cursor-pointer select-none mb-7 mt-7'
         bgColor='var(--color-primary-700)'
       />
       <engine.form
@@ -86,7 +89,7 @@ export const DuckDuckGo = {
         <input type='hidden' name='k5' value='1' />
         <Input
           name='q'
-          placeholder='Explore the web anonymously'
+          placeholder='Explore the web with privacy protection'
           className={`${className}`}
           ref={ref}
           {...props}
@@ -113,7 +116,6 @@ export const Google = {
           name='q'
           placeholder='Explore the web with the best experience'
           className={`${className}`}
-          role='combobox'
           {...props}
         />
       </form>
@@ -155,7 +157,7 @@ export const Bing = {
     return (
       <form
         method='get'
-        action='https://www.bing.com//search'
+        action='https://www.bing.com/search'
         className='flex justify-center items-center w-full'
       >
         <Input

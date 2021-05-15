@@ -1,4 +1,4 @@
-import { iconProps } from './iconProps';
+import { iconProps } from '../shared/iconProps';
 
 const DuckDuckGo = ({ bgColor, ...props }: iconProps) => {
   return (

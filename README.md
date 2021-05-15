@@ -1,6 +1,6 @@
 ## Engines
 
-| Id  | Name               | Url                                   | Active                                                | Description                                          |
+| Id  | Name               | Url                                   | Status                                                | Description                                          |
 | --- | ------------------ | ------------------------------------- | ----------------------------------------------------- | ---------------------------------------------------- |
 | `0` | `DuckDuckGo`       | https://duckduckgo.com/               | <code style="color: #30D158;">active (default)</code> | Focus on privacy                                     |
 | `1` | `Google`           | https://www.google.com/search/        | <code style="color: #30D158;">active</code>           | Best search results                                  |

@@ -1,4 +1,4 @@
-import { iconProps } from './iconProps';
+import { iconProps } from '../shared/iconProps';
 
 const GoogleScholar = ({ bgColor, ...props }: iconProps) => {
   return (
