@@ -3,6 +3,7 @@ import { Input } from './Input';
 
 import DuckDuckGoImage from './icons/DuckDuckGo';
 import GoogleImage from './icons/Google';
+import GoogleScholarImage from './icons/GoogleScholar';
 import MsBingImage from './icons/MsBing';
 
 export interface BarProps {
@@ -15,6 +16,8 @@ export const getEngine = (engine: string) => {
       return DuckDuckGo;
     case 'Google':
       return Google;
+    case 'GoogleScholar':
+      return GoogleScholar;
     case 'Bing':
       return Bing;
 
@@ -23,7 +26,7 @@ export const getEngine = (engine: string) => {
   }
 };
 
-export const BarConfig = ['DuckDuckGo', 'Google', 'Bing'];
+export const BarConfig = ['DuckDuckGo', 'Google', 'GoogleScholar', 'Bing'];
 
 export const Bar = ({ Engine }: BarProps) => {
   const [engine, setEngine] = useState(getEngine(Engine) as any);
@@ -52,6 +55,7 @@ export const Bar = ({ Engine }: BarProps) => {
       <engine.img
         onClick={handleClick}
         className='activeUp cursor-pointer select-none mb-7 mt-9'
+        bgColor='var(--color-primary-700)'
       />
       <engine.form
         ref={ref}
@@ -132,7 +136,7 @@ export const GoogleScholar = {
         <input name='source' type='hidden' value='hp' />
         <Input
           name='q'
-          placeholder='Explore the web with the best experience'
+          placeholder='Explore scientific literature'
           className={`${className}`}
           role='combobox'
           {...props}
@@ -141,7 +145,7 @@ export const GoogleScholar = {
     );
   }),
   img: ({ className, ...props }) => {
-    return <GoogleImage className={`${className}`} {...props} />;
+    return <GoogleScholarImage className={`${className}`} {...props} />;
   },
 };
 

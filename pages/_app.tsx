@@ -11,7 +11,7 @@ import 'tailwindcss/tailwind.css';
 import '../theme/COLORS.css';
 import '../styles/notifications.css';
 import '../styles/nprogress.css';
-import "../styles/toggle.css"
+import '../styles/toggle.css';
 
 import '../styles/globals.css';
 
@@ -22,7 +22,6 @@ Router.events.on('routeChangeComplete', () => NProgress.done());
 Router.events.on('routeChangeError', () => NProgress.done());
 
 export default function App({ Component, pageProps }: AppProps) {
-  console.log('Hello');
   return (
     <ThemeProvider>
       <Wrapper>
