@@ -1,6 +1,16 @@
 {
   "name": "newtab",
   "version": "0.0.1",
+  "homepage": "https://github.com/m2vi/newtab",
+  "author": {
+    "name": "m2vi",
+    "url": "https://newtab-one.vercel.app/"
+  },
+  "description": "A newtab page for my mom",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/m2vi/newtab"
+  },
   "private": true,
   "scripts": {
     "dev": "next dev",
