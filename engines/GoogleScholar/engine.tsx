@@ -4,7 +4,7 @@ import Icon from './icon';
 export const GoogleScholarIcon = Icon;
 
 export const GoogleScholar: engineProps = {
-  name: 'Google',
+  name: 'Google Scholar',
   key: ':gs',
   method: 'GET',
   action: 'https://scholar.google.at/scholar',

@@ -10,7 +10,7 @@ const DuckDuckGo = ({ bgColor, ...props }: iconProps) => {
       xmlns='http://www.w3.org/2000/svg'
       {...props}
     >
-      <g clip-path='url(#clip0)'>
+      <g clipPath='url(#clip0)'>
         <path
           d='M78.7991 4.20941L8.35473 42.7154C3.20375 45.531 2.39395e-05 50.9334 2.25854e-05 56.8037L2.19626e-06 145.196C0 151.067 3.20374 156.469 8.35472 159.285L78.7991 197.791C83.598 200.414 89.402 200.414 94.2008 197.791L164.645 159.285C169.796 156.469 173 151.067 173 145.196L173 56.8037C173 50.9334 169.796 45.5311 164.645 42.7154L94.2008 4.2094C89.402 1.58628 83.598 1.58629 78.7991 4.20941Z'
           fill={bgColor}
@@ -42,9 +42,9 @@ const DuckDuckGo = ({ bgColor, ...props }: iconProps) => {
           width='129.319'
           height='136.343'
           filterUnits='userSpaceOnUse'
-          color-interpolation-filters='sRGB'
+          colorInterpolationFilters='sRGB'
         >
-          <feFlood flood-opacity='0' result='BackgroundImageFix' />
+          <feFlood floodOpacity='0' result='BackgroundImageFix' />
           <feColorMatrix
             in='SourceAlpha'
             type='matrix'
@@ -75,9 +75,9 @@ const DuckDuckGo = ({ bgColor, ...props }: iconProps) => {
           width='93.6455'
           height='93.6455'
           filterUnits='userSpaceOnUse'
-          color-interpolation-filters='sRGB'
+          colorInterpolationFilters='sRGB'
         >
-          <feFlood flood-opacity='0' result='BackgroundImageFix' />
+          <feFlood floodOpacity='0' result='BackgroundImageFix' />
           <feColorMatrix
             in='SourceAlpha'
             type='matrix'
@@ -108,9 +108,9 @@ const DuckDuckGo = ({ bgColor, ...props }: iconProps) => {
           width='109.19'
           height='114.184'
           filterUnits='userSpaceOnUse'
-          color-interpolation-filters='sRGB'
+          colorInterpolationFilters='sRGB'
         >
-          <feFlood flood-opacity='0' result='BackgroundImageFix' />
+          <feFlood floodOpacity='0' result='BackgroundImageFix' />
           <feColorMatrix
             in='SourceAlpha'
             type='matrix'

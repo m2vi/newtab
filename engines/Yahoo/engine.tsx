@@ -1,13 +1,14 @@
 import { engineProps } from '../shared/engineProps';
 import Icon from './icon';
 
-export const MsBingIcon = Icon;
+export const YahooIcon = Icon;
 
-export const MsBing: engineProps = {
-  name: 'Microsoft Bing',
-  key: ':b',
+export const Yahoo: engineProps = {
+  deactivated: true,
+  name: 'Yahoo!',
+  key: ':y',
   method: 'GET',
-  action: 'https://www.bing.com/search',
+  action: 'https://search.yahoo.com/search',
 
   icon: ({ ...props }) => {
     return <Icon {...props} />;

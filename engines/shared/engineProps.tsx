@@ -1,4 +1,6 @@
 export interface engineProps {
+  deactivated?: boolean;
+
   name: string;
   key: string;
 
