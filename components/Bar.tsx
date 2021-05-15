@@ -1,10 +1,10 @@
 import { useEffect, useState, FC, useRef, forwardRef, RefObject } from 'react';
 import { Input } from './Input';
 
-import DuckDuckGoImage from './icons/DuckDuckGo';
-import GoogleImage from './icons/Google';
-import GoogleScholarImage from './icons/GoogleScholar';
-import MsBingImage from './icons/MsBing';
+import DuckDuckGoImage from './engines/icons/DuckDuckGo';
+import GoogleImage from './engines/icons/Google';
+import GoogleScholarImage from './engines/icons/GoogleScholar';
+import MsBingImage from './engines/icons/MsBing';
 
 export interface BarProps {
   Engine: string;
