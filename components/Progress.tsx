@@ -1,10 +1,36 @@
 import { Line } from 'rc-progress';
 import { useEffect, useState } from 'react';
+import { CloseBtn } from './CloseButton';
 import { Spinner } from './Spinner';
 
 const Progress = (props) => {
+  const [active, setActive] = useState(false);
   const [percent, setPercent] = useState(100);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
+
+  const waitForBookmarks = (callback: Function, iteration?: number) => {
+    const win = window as any;
+    const waitingTime = iteration ? Math.floor(iteration * 250 * 1.1) : 250;
+
+    if (!active) {
+      setLoading(false);
+      setPercent(0);
+    }
+
+    if (win.bookmarks) {
+      return callback(win.bookmarks);
+    }
+
+    console.log({
+      text: 'Trying to receive the bookmarks',
+      iteration,
+      waitingTime,
+    });
+
+    setTimeout(() => {
+      waitForBookmarks(callback, iteration ? iteration + 1 : 1);
+    }, waitingTime);
+  };
 
   useEffect(() => {
     // waitForBookmarks((bookmarks) => console.log(bookmarks));
@@ -12,10 +38,18 @@ const Progress = (props) => {
 
   return (
     <>
-      {percent === 100 ? (
+      {percent === 100 || !active ? (
         <props.after />
       ) : (
         <div className='overflow-hidden absolute top-0 left-0 bottom-0 right-0 h-screen w-full bg-primary-900 flex justify-center items-center'>
+          <CloseBtn
+            className='absolute top-0 right-0 m-4'
+            transparent
+            onClick={() => {
+              setActive(false);
+              console.log('h?');
+            }}
+          />
           <div className='flex flex-col items-center'>
             <div className='flex justify-between max-w-xs items-center'>
               <Line
@@ -59,23 +93,4 @@ export const Percentage = ({ percent, loading }) => {
       )}
     </>
   );
-};
-
-export const waitForBookmarks = (callback: Function, iteration?: number) => {
-  const win = window as any;
-  const waitingTime = iteration ? Math.floor(iteration * 250 * 1.1) : 250;
-
-  if (win.bookmarks) {
-    return callback(win.bookmarks);
-  }
-
-  console.log({
-    text: 'Trying to receive the bookmarks',
-    iteration,
-    waitingTime,
-  });
-
-  setTimeout(() => {
-    waitForBookmarks(callback, iteration ? iteration + 1 : 1);
-  }, waitingTime);
 };

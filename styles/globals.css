@@ -235,8 +235,11 @@ img {
   }
 }
 
-/* Checkbox */
+.bookmarkWrapper {
+  display: grid;
+  grid-template-columns: repeat(6, 86px);
+}
 
-/* label:active:after {
-  width: 32px;
-} */
+.max-w-bookmark {
+  max-width: 32rem;
+}

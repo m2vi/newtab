@@ -12,7 +12,7 @@ const Base = ({ Icon, name, className, ...props }: ButtonProps) => {
   return (
     <button
       name={name}
-      className={`flex justify-center items-center text-primary-100 hover:text-primary-200 ${className}`}
+      className={`flex justify-center items-center text-white hover:text-whiteH ${className}`}
       {...props}
     >
       <Icon className='h-5 w-5 pointer-events-none m-2' />

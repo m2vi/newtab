@@ -1,14 +1,11 @@
 import { useContext, useEffect } from 'react';
-import { detectTheme, ThemeContext } from '../context/theme';
+import { ThemeContext, init__theme } from '../context/theme';
 
 const Wrapper = ({ children }) => {
   const theme = useContext(ThemeContext);
 
   useEffect(() => {
-    theme.dispatch({
-      type: detectTheme(),
-      silent: true,
-    });
+    init__theme(theme);
   }, []);
 
   return children;

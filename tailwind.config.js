@@ -58,6 +58,7 @@ module.exports = {
       transparent: 'transparent',
       default: 'red',
       white: 'var(--icon-white)',
+      whiteH: 'rgba(255, 255, 255, 0.8)',
       primary: {
         100: 'var(--color-primary-100)',
         200: 'var(--color-primary-200)',
@@ -101,6 +102,7 @@ module.exports = {
       300: '300px',
       400: '400px',
       800: '800px',
+      d7: '36px',
     },
     borderWidth: {
       DEFAULT: '1px',
@@ -110,6 +112,7 @@ module.exports = {
       none: 'none',
       accent: '0 0 0 3px var(--color-accent-glow)',
       1: 'var(--shadow-normal)',
+      2: 'rgb(0 0 0 / 30%) 0px 1px 4px 0px',
     },
     extend: {
       borderRadius: {
@@ -117,6 +120,7 @@ module.exports = {
         5: '4px',
         8: '8px',
         15: '15px',
+        round: '50%',
       },
       outline: {
         'no-chrome': 'none',

@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import Divider from '../../../components/Divider';
-import { Toggle } from '../../../components/Toggle';
+import { DarkMode } from '../../../settings/preferences';
 import capitalize from '../../../utils/text/capitalize';
 
 const index = () => {
@@ -52,7 +52,8 @@ const index = () => {
       >
         <nav className='h-full w-800'>
           <div className='w-full h-14 bg-primary-800 rounded-8 mb-4' />
-          <Toggle is='brave' />
+
+          <DarkMode />
         </nav>
       </aside>
     </div>

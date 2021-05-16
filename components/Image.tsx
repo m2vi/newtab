@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 export const Image = ({ ...props }: ImageProps) => {
   const getIndex = (max: number) => {
@@ -38,7 +38,11 @@ export const imageConfig: ImageItemProps = [
   {
     hasImage: false,
     bodyCSS: {
-      backgroundColor: '',
+      backgroundColor: '#aab9c7',
+      backgroundImage: "url('/bg/valley.webp')",
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
     },
     className: 'bottom-0 right-0 top-0 left-0 h-full w-full',
   },
@@ -54,8 +58,8 @@ export interface ImageItemProps {
     src?: string;
     alt?: string;
     className?: string;
-    css?: object;
-    bodyCSS?: object;
+    css?: React.CSSProperties;
+    bodyCSS?: React.CSSProperties;
   };
   length: number;
 }

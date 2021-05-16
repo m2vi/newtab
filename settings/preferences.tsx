@@ -1,14 +1,16 @@
 import { ChangeEvent, useContext } from 'react';
+import { Toggle } from '../components/Toggle';
 import { applyTheme, ThemeContext } from '../context/theme';
 
 export interface optionProps extends React.ComponentPropsWithoutRef<'div'> {
   className?: string;
 }
 
-export const useDarkMode = ({ className, ...props }: optionProps) => {
+export const DarkMode = ({ className, ...props }: optionProps) => {
   const { state } = useContext(ThemeContext);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    console.log(e.target.checked);
     applyTheme({
       darkMode: e.target.checked,
       options: {
@@ -23,10 +25,7 @@ export const useDarkMode = ({ className, ...props }: optionProps) => {
       {...props}
     >
       <span>Use dark mode</span>
-      <div className='flex items-center justify-center'>
-        <input type='checkbox' id='darkModeSwitch' onChange={handleChange} />
-        <label htmlFor='darkModeSwitch' />
-      </div>
+      <Toggle defaultChecked={state.darkMode} onChange={handleChange} />
     </div>
   );
 };

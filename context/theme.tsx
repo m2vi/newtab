@@ -5,6 +5,13 @@ import capitalize from '../utils/text/capitalize';
 
 export const ThemeContext = createContext(null);
 
+export const init__theme = (context: any) => {
+  context.dispatch({
+    type: detectTheme(),
+    silent: true,
+  });
+};
+
 export const detectTheme = () => {
   if (localStorage.getItem('theme')) {
     const theme = localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';

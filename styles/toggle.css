@@ -1,7 +1,7 @@
 .brave__switch {
-  --line: #c4c7c9;
-  --dot: #f7f8ff;
-  --circle: #9ea0be;
+  --line: var(--color-primary-600);
+  --dot: var(--color-primary-100);
+  --circle: var(--color-primary-400);
   --duration: 0.25s;
   cursor: pointer;
 }
@@ -17,13 +17,13 @@
   content: '';
   position: absolute;
   z-index: -1;
-  height: 8px;
-  top: 6.3999px;
+  height: 6px;
+  top: 7.25px;
   left: 0;
   width: 40px;
   background: var(--line);
   transition: transform var(--duration) ease;
-  border-radius: 2px;
+  border-radius: 1.5px;
 }
 .brave__switch input + div span {
   padding-left: 40px;
@@ -32,7 +32,7 @@
 .brave__switch input + div span:before {
   --x: -1px;
   --b: var(--circle);
-  --s: #ebecf0;
+  --s: var(--circle);
   content: '';
   position: absolute;
   left: 0;

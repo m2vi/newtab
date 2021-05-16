@@ -55,7 +55,7 @@ export const Bar = () => {
           autoCorrect='off'
           spellCheck='false'
           autoFocus
-          className='max-w-2xl mx-3'
+          className='mx-3 max-w-2xl'
         />
       </form>
     </div>
