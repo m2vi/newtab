@@ -29,39 +29,25 @@ export const initialBookmarks: BookmarksProps = {
       url: 'http://netflix.com/',
       creationDate: new Date(),
     },
+
     {
-      name: 'Google',
-      url: 'http://google.com/',
+      name: 'Amazon',
+      url: 'https://www.amazon.com/',
       creationDate: new Date(),
     },
     {
-      name: 'YouTube',
-      url: 'https://youtube.com',
+      name: 'Wikipedia',
+      url: 'https://de.wikipedia.org/',
       creationDate: new Date(),
     },
     {
-      name: 'Netflix',
-      url: 'http://netflix.com/',
+      name: 'Instagram',
+      url: 'https://www.instagram.com/',
       creationDate: new Date(),
     },
     {
-      name: 'Google',
-      url: 'http://google.com/',
-      creationDate: new Date(),
-    },
-    {
-      name: 'YouTube',
-      url: 'https://youtube.com',
-      creationDate: new Date(),
-    },
-    {
-      name: 'Netflix',
-      url: 'https://netflix.com/',
-      creationDate: new Date(),
-    },
-    {
-      name: 'Google',
-      url: 'https://google.com/',
+      name: 'Apple Inc.',
+      url: 'https://www.apple.com/',
       creationDate: new Date(),
     },
   ],
@@ -131,7 +117,6 @@ export const BookmarkIcon = ({ url }: BookmarkProps) => {
 
 export const iconSrc = (url: string) => {
   const { hostname } = new URL(url);
-  console.log(hostname);
 
   return `https://www.google.com/s2/favicons?sz=128&domain_url=${hostname}`;
 };

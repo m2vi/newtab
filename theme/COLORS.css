@@ -11,15 +11,15 @@
 }
 
 .theme-light {
-  /* fonts */
-  --color-primary-100: #141820;
-  --color-primary-200: #212a35;
-  --color-primary-300: #718096;
-
-  /* backgrounds */
+  --color-primary-100: #000000;
+  --color-primary-200: rgba(0, 0, 0, 0.6);
+  --color-primary-300: rgba(0, 0, 0, 0.4);
+  --color-primary-400: #768198;
+  --color-primary-500: #535d73;
+  --color-primary-600: #333b4d;
   --color-primary-700: #ffffff;
-  --color-primary-800: #efeff4;
-  --color-primary-900: #ffffff;
+  --color-primary-800: #101624;
+  --color-primary-900: #eaf2ff;
 }
 
 body {
