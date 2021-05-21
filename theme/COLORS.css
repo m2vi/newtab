@@ -29,7 +29,7 @@ body {
   --icon-white: #ffffff;
   --icon-focus: #dde2e9;
 
-  --color-accent: hsl(220, 80%, 55%);
+  --color-accent: #306ee8;
   --color-accent-hover: hsl(220, 100%, 65%);
   --color-accent-disabled: hsl(220, 100%, 80%);
   --color-accent-glow: #42b4ff;
@@ -42,4 +42,16 @@ body {
   --color-accent-2-glow: rgba(253, 77, 77, 0.063);
 
   --shadow-normal: 0px 6px 6px rgba(0, 0, 0, 0.25);
+}
+
+:root {
+  --bg-primary-100: #f2f5fb;
+  --bg-primary-200: #dae1f0;
+  --bg-primary-300: #98a3b9;
+  --bg-primary-400: #768198;
+  --bg-primary-500: #535d73;
+  --bg-primary-600: #333b4d;
+  --bg-primary-700: #232936;
+  --bg-primary-800: #101624;
+  --bg-primary-900: #0c111b;
 }

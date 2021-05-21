@@ -59,6 +59,17 @@ module.exports = {
       default: 'red',
       white: 'var(--icon-white)',
       whiteH: 'rgba(255, 255, 255, 0.8)',
+      bg: {
+        100: 'var(--bg-primary-100)',
+        200: 'var(--bg-primary-200)',
+        300: 'var(--bg-primary-300)',
+        400: 'var(--bg-primary-400)',
+        500: 'var(--bg-primary-500)',
+        600: 'var(--bg-primary-600)',
+        700: 'var(--bg-primary-700)',
+        800: 'var(--bg-primary-800)',
+        900: 'var(--bg-primary-900)',
+      },
       primary: {
         100: 'var(--color-primary-100)',
         200: 'var(--color-primary-200)',

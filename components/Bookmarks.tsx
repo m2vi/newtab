@@ -1,5 +1,4 @@
-import Image from 'next/image';
-import Divider from './Divider';
+import { IoEllipsisHorizontal } from 'react-icons/io5';
 
 export interface BookmarkWrapperProps {
   children: any;
@@ -29,7 +28,6 @@ export const initialBookmarks: BookmarksProps = {
       url: 'http://netflix.com/',
       creationDate: new Date(),
     },
-
     {
       name: 'Amazon',
       url: 'https://www.amazon.com/',
@@ -55,7 +53,7 @@ export const initialBookmarks: BookmarksProps = {
 
 export const BookmarkWrapper = ({ children }: BookmarkWrapperProps) => {
   return (
-    <div className='w-full flex justify-center flex-col items-center'>
+    <div className='w-full flex justify-center flex-col items-center mt-2'>
       <div className='bookmarkWrapper w-full' style={{ maxWidth: '512px' }}>
         {children}
       </div>
@@ -119,4 +117,12 @@ export const iconSrc = (url: string) => {
   const { hostname } = new URL(url);
 
   return `https://www.google.com/s2/favicons?sz=128&domain_url=${hostname}`;
+};
+
+export const BookmarkSettings = ({}) => {
+  return (
+    <div className='bg-primary-800 rounded-8 overflow-hidden shadow-1 p-2'>
+      Hello World
+    </div>
+  );
 };
